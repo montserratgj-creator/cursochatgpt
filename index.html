@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>¡Vamos México! - Vive el Fútbol</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0c5a2a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Fondo animado */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:
+    radial-gradient(circle,#ffffff22 2px,transparent 3px);
+    animation:mover 40s linear infinite;
+    z-index:-1;
+}
+
+@keyframes mover{
+    from{transform:translate(0,0);}
+    to{transform:translate(-300px,-300px);}
+}
+
+/* MENÚ */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,80,30,.95);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    z-index:999;
+    box-shadow:0 3px 15px rgba(0,0,0,.4);
+}
+
+.logoMenu{
+    font-size:30px;
+    font-weight:bold;
+    color:white;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ff2d2d;
+}
+
+/* SLIDER */
+
+.slider{
+    margin-top:80px;
+    width:100%;
+    height:500px;
+    overflow:hidden;
+    position:relative;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:opacity 1.2s;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(.45);
+}
+
+.textoSlider{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+.textoSlider h1{
+    font-size:60px;
+    text-shadow:3px 3px 10px black;
+}
+
+.textoSlider p{
+    margin-top:15px;
+    font-size:24px;
+}
+
+/* LOGO CENTRAL */
+
+.centro{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.logoGrande{
+    width:420px;
+    max-width:90%;
+    animation:flotar 3s ease-in-out infinite;
+    filter:drop-shadow(0 0 25px rgba(255,255,255,.4));
+}
+
+@keyframes flotar{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0px);}
+}
+
+.centro h2{
+    font-size:48px;
+    margin-top:30px;
+}
+
+.centro p{
+    width:80%;
+    margin:auto;
+    margin-top:20px;
+    font-size:20px;
+    line-height:1.7;
+}
+
+/* BOTONES */
+
+.botones{
+    margin-top:40px;
+}
+
+.btn{
+    display:inline-block;
+    padding:18px 35px;
+    margin:10px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    transition:.4s;
+}
+
+.verde{
+    background:#00923f;
+}
+
+.rojo{
+    background:#c8102e;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px rgba(255,255,255,.5);
+}
+
+/* TARJETAS */
+
+.seccion{
+    padding:70px 8%;
+    background:white;
+    color:#222;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    padding:30px;
+    border-radius:20px;
+    background:#f5f5f5;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#006b35;
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:#003b1e;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logoMenu">
+? VAMOS MÉXICO
+</div>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#">Entrena</a>
+<a href="#">Eventos</a>
+<a href="#">Galería</a>
+<a href="#">Contacto</a>
+</nav>
+
+</header>
+
+<section class="slider">
+
+<div class="slide active">
+<img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=1600" alt="">
+<div class="textoSlider">
+<h1>¡El fútbol nos une!</h1>
+<p>Juega, compite y vive la pasión.</p>
+</div>
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1600" alt="">
+<div class="textoSlider">
+<h1>Entrena cada día</h1>
+<p>El esfuerzo construye campeones.</p>
+</div>
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=1600" alt="">
+<div class="textoSlider">
+<h1>Juega con pasión</h1>
+<p>Comparte momentos inolvidables.</p>
+</div>
+</div>
+
+</section>
+
+<section class="centro">
+
+<img src="logo(3).jpg" class="logoGrande" alt="Logo principal">
+
+<h2>¡Anímate a jugar fútbol!</h2>
+
+<p>
+El fútbol fomenta el trabajo en equipo, la disciplina, la salud y la convivencia.
+Únete a miles de aficionados que disfrutan este deporte con pasión y orgullo.
+</p>
+
+<div class="botones">
+
+<a href="#" class="btn verde">
+Únete Ahora
+</a>
+
+<a href="#" class="btn rojo">
+Conoce Más
+</a>
+
+</div>
+
+</section>
+
+<section class="seccion">
+
+<div class="grid">
+
+<div class="card">
+<h3>? Pasión</h3>
+<p>Vive la emoción de cada partido y comparte momentos inolvidables.</p>
+</div>
+
+<div class="card">
+<h3>?? Salud</h3>
+<p>Practicar fútbol mejora tu condición física, coordinación y resistencia.</p>
+</div>
+
+<div class="card">
+<h3>?? Trabajo en Equipo</h3>
+<p>Aprende liderazgo, compañerismo y disciplina dentro y fuera de la cancha.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>¡Vamos México!</h2>
+
+<p>
+Inspirando nuevas generaciones a disfrutar el fútbol con energía y entusiasmo.
+</p>
+
+</footer>
+
+<script>
+
+const slides=document.querySelectorAll(".slide");
+let actual=0;
+
+setInterval(()=>{
+
+slides[actual].classList.remove("active");
+
+actual++;
+
+if(actual>=slides.length){
+actual=0;
+}
+
+slides[actual].classList.add("active");
+
+},4000);
+
+</script>
+
+</body>
+</html>
